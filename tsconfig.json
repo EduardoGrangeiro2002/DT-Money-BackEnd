@@ -6,11 +6,10 @@
     "module": "commonjs",
     "baseUrl": "./src",
     "paths": {
-      "@modules/*": ["modules/*"],
-      "@configs/*": ["configs/*"],
-      "@shared/*": ["shared/*"],
-      "@error]/*": ["error/*"],
-      "@utils/*": ["utils/*"]
+      "@config/*": ["src/config/*"],
+      "@modules/*": ["src/modules/*"],
+      "@shared/*": ["src/shared/*"],
+      "@tests/*": ["src/tests/*"]
     },
     "resolveJsonModule": true,
     "outDir": "./dist",

@@ -6,7 +6,7 @@
     "password": "docker",
     "database": "dtmoney", 
     "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
-    "entities": ["./src/modules/**/Entities/*.ts"],
+    "entities": ["./src/modules/**/entities/*.ts"],
     "cli": {
       "migrationsDir": "./src/shared/infra/typeorm/migrations/"
     }

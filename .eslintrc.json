@@ -60,7 +60,11 @@
   "error",
   { "devDependencies": ["**/*.spec.js"] }
 ],
-"prettier/prettier": "error"
+"prettier/prettier": "error",
+  "@typescript-eslint/no-namespace": "off",
+  "no-use-before-define": "off",
+  "@typescript-eslint/no-use-before-define": ["error"]
+
     },
     "settings": {
         "import/resolver": {
