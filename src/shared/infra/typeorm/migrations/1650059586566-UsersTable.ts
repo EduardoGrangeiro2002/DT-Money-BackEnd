@@ -30,6 +30,7 @@ export class UsersTable1650059586566 implements MigrationInterface {
           {
             name: "avatar",
             type: "varchar",
+            isNullable: true,
           },
           {
             name: "created_at",
@@ -39,6 +40,7 @@ export class UsersTable1650059586566 implements MigrationInterface {
           {
             name: "updated_at",
             type: "timestamp",
+            isNullable: true,
           },
         ],
       })
