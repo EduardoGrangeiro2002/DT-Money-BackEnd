@@ -27,6 +27,8 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.2",
     "express": "^4.17.3",
-    "typeorm": "^0.3.6"
+    "pg": "^8.7.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.40"
   }
 }

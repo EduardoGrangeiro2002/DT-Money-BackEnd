@@ -1,13 +1,13 @@
 {
-    "type": "postgres",
-    "port": 5432,
-    "host": "localhost", 
-    "username": "postgres",
-    "password": "docker",
-    "database": "dtmoney", 
-    "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
-    "entities": ["./src/modules/**/entities/*.ts"],
-    "cli": {
-      "migrationsDir": "./src/shared/infra/typeorm/migrations/"
-    }
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5432,
+  "username": "postgres",
+  "password": "docker",
+  "database": "dtmoney",
+  "entities": ["./{src|dist}/modules/**/infra/typeorm/entities/*.{ts|js}"],
+  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
   }
+}
