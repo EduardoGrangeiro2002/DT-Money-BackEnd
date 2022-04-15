@@ -22,7 +22,7 @@ export type UserDTO = {
   updatedAt: Date;
 };
 
-type Vip = {
+export type Vip = {
   ranking: "default" | "gold" | "platinum" | "diamond";
 };
 
