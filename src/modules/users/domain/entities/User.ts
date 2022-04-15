@@ -51,4 +51,13 @@ export class User extends BaseUser {
       return new AppError("Senha deve ter pelo menos 8 caracteres");
     }
   }
+
+  toDto(): Omit<UserDTO, "email" | "createdAt" | "updatedAt"> {
+    return {
+      id: this.id,
+      name: this.name,
+      password: this.password,
+      vip: this.vip,
+    };
+  }
 }
