@@ -22,9 +22,7 @@ export type UserDTO = {
   updatedAt: Date;
 };
 
-export type Vip = {
-  ranking: "default" | "gold" | "platinum" | "diamond";
-};
+export type Vip = "bronze" | "gold" | "platinum" | "diamond";
 
 export class User extends BaseUser {
   private readonly email: string;

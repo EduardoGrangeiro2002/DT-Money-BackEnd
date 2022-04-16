@@ -12,9 +12,21 @@ export class UserRepository implements IUserRepository {
     this.usersRepository = getRepository(User);
   }
 
-  async createUsers({ email, name, password }: UserModel.Input): Promise<void> {
-    const user = await this.usersRepository.create({ email, name, password });
+  async createUsers({ email, name, password }: UserModel.Input): Promise<User> {
+    const user = this.usersRepository.create({ email, name, password });
+
+    await this.usersRepository.save(user);
+
+    return user;
   }
-  findUserByEmail: (email: string) => Promise<UserDTO>;
-  findUserById: (id: string) => Promise<UserDTO>;
+  async findUserByEmail(email: string): Promise<UserDTO> {
+    const user = await this.usersRepository.findOne({ email });
+
+    return user;
+  }
+  async findUserById(id: string): Promise<UserDTO> {
+    const user = await this.usersRepository.findOne(id);
+
+    return user;
+  }
 }
