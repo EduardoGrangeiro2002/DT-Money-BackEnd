@@ -1,8 +1,9 @@
 import { Router } from "express";
 
+import { makeCreateUserController } from "../../factories/controllers";
 import { adaptRoute } from "../adapterRoutes";
-import { makeCreateUserController } from "../factories";
 
-export default (router: Router): void => {
-  router.post("/users", adaptRoute(makeCreateUserController()));
-};
+const createUsersController = makeCreateUserController();
+export const userRoutes = Router();
+
+userRoutes.post("/", adaptRoute(createUsersController));

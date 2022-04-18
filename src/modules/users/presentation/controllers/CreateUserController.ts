@@ -7,7 +7,6 @@ export class CreateUserController implements IController {
   async handle(request: Http.Request): Promise<Http.Response<void>> {
     try {
       const { name, email, password } = request.body;
-
       await this.createUserService.create({ email, name, password });
 
       return statusSuccess();

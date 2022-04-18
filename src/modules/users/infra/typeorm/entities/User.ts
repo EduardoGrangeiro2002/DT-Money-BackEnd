@@ -1,4 +1,3 @@
-import { Vip } from "modules/users/domain/entities/User";
 import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
@@ -17,7 +16,7 @@ export class User {
   password: string;
 
   @Column()
-  vip: Vip;
+  vip: string;
 
   @Column()
   avatar: string;

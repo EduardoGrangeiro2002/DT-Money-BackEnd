@@ -1,10 +1,10 @@
 import { CreateUserService } from "../../../../modules/users/dataLayers/services/CreateUserService";
-import { UserRepository } from "../../../../modules/users/infra/typeorm/repositories/UserRepository";
 import { IController } from "../../../../modules/users/presentation/contracts/IController";
 import { CreateUserController } from "../../../../modules/users/presentation/controllers/CreateUserController";
+import { MakeUserRepository } from "../repositories";
 
 export const makeCreateUserController = (): IController => {
-  const repo = new UserRepository();
+  const repo = MakeUserRepository.getInstance();
   const service = new CreateUserService(repo);
   return new CreateUserController(service);
 };
