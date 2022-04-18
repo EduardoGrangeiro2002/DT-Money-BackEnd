@@ -1,3 +1,5 @@
+import AppError from "shared/errors/AppError";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export namespace Http {
   export type Request<T = any> = {
@@ -12,10 +14,10 @@ export namespace Http {
   };
 }
 
-export const statusError = (error: Error): Http.Response => {
+export const statusError = (error: AppError): Http.Response => {
   return {
-    statusCode: 500,
-    data: error.stack,
+    statusCode: error.statusCode,
+    data: error.message,
   };
 };
 

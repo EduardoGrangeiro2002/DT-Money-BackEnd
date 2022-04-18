@@ -6,4 +6,5 @@ export interface IUserRepository {
   createUsers: ({ email, name, password }: UserModel.Input) => Promise<User>;
   findUserByEmail: (email: string) => Promise<UserModel.Output>;
   findUserById: (id: string) => Promise<UserModel.Output>;
+  save: (data: UserModel.Input) => Promise<void>;
 }

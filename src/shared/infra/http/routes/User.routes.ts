@@ -7,3 +7,4 @@ const createUsersController = makeCreateUserController();
 export const userRoutes = Router();
 
 userRoutes.post("/", adaptRoute(createUsersController));
+userRoutes.patch("/", adaptRoute(createUsersController));
