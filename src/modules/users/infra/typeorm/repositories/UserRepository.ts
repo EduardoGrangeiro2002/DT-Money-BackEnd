@@ -1,6 +1,6 @@
 import { IUserRepository } from "modules/users/dataLayers/interfaces/IUserRepository";
 import { UserModel } from "modules/users/dataLayers/models";
-import { UserDTO, UserProps } from "modules/users/domain/entities/User";
+import { UserProps } from "modules/users/domain/entities/User";
 import { getRepository, Repository } from "typeorm";
 
 import { User } from "../../../domain/entities/index";
@@ -25,9 +25,14 @@ export class UserRepository implements IUserRepository {
 
     return user;
   }
-  async findUserByEmail(email: string): Promise<UserDTO> {
-    const user = await this.usersRepository.findOne({ email });
+  async findUserByEmail(email: string): Promise<User> {
+    const userData = await this.usersRepository.findOne({ email });
 
+    let user: User | undefined;
+
+    if (userData) {
+      user = new User(userData as unknown as UserProps);
+    }
     return user;
   }
   async findUserById(id: string): Promise<User> {
@@ -35,7 +40,6 @@ export class UserRepository implements IUserRepository {
     let user: User | undefined;
 
     if (userData) {
-      console.log(userData);
       user = new User(userData as unknown as UserProps);
     }
     return user;

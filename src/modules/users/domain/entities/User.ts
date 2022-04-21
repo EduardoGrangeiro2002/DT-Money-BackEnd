@@ -10,7 +10,7 @@ export type UserProps = {
   password: string;
   avatar?: string;
   avatarUrl?: string;
-  createdAt: Date;
+  createdAt?: Date;
   updatedAt?: Date;
 };
 
@@ -38,6 +38,7 @@ export class User extends BaseUser {
     this.id = props.id;
     this.name = props.name;
     this.email = props.email;
+    this.password = props.password;
     this.avatar = props.avatar;
     this.avatarUrl = props.avatarUrl;
     this.createdAt = props.createdAt;
@@ -62,5 +63,13 @@ export class User extends BaseUser {
 
   getAvatarUrl(): string {
     return this.avatar;
+  }
+
+  getPassword(): string {
+    return this.password;
+  }
+
+  getEmail(): string {
+    return this.email;
   }
 }

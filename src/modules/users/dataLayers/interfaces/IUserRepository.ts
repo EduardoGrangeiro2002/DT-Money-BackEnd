@@ -9,7 +9,7 @@ export interface IUserRepository {
     name,
     password,
   }: UserModel.Input) => Promise<UserTypeorm>;
-  findUserByEmail: (email: string) => Promise<UserModel.Output>;
+  findUserByEmail: (email: string) => Promise<User>;
   findUserById: (id: string) => Promise<User>;
   save: (data: UserModel.Input) => Promise<void>;
 }
