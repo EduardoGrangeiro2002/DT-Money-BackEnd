@@ -1,12 +1,18 @@
-import { Vip } from "modules/users/domain/entities";
+import { PossibleValue } from "modules/users/domain/entities";
 
 export namespace VipModel {
   export type Input = {
     value: valueModel;
-    price: number;
+    price?: number;
   };
 
-  export type Output = Vip;
+  export type Output = {
+    id: string;
+    value: string;
+    price: number;
+    createdAt: Date;
+    updatedAt: Date;
+  };
 }
 
-export type valueModel = "prata" | "gold" | "diamond";
+export type valueModel = PossibleValue;

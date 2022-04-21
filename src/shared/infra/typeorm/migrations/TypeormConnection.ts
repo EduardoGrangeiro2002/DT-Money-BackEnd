@@ -1,4 +1,5 @@
 import { User } from "modules/users/infra/typeorm/entities/User";
+import { Vip } from "modules/vips/infra/typeorm/entities/Vip";
 import {
   Connection,
   ConnectionOptions,
@@ -38,7 +39,7 @@ export class TypeormConnect {
     const options = await getConnectionOptions();
 
     return Object.assign(options, props, {
-      entities: [User],
+      entities: [User, Vip],
     });
   }
 
