@@ -1,2 +1,2 @@
 export * from "./User";
-export * from "./Vip";
+export * from "../../../vips/domain/entities/Vip";
