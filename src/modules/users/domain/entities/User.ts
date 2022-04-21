@@ -6,9 +6,12 @@ export type UserProps = {
   id?: string;
   name: string;
   email: string;
+  vip?: string;
   password: string;
   avatar?: string;
   avatarUrl?: string;
+  createdAt: Date;
+  updatedAt?: Date;
 };
 
 export type UserDTO = {
@@ -26,6 +29,8 @@ export class User extends BaseUser {
   private readonly id: string;
   private readonly avatar?: string;
   private readonly avatarUrl?: string;
+  private readonly createdAt: Date;
+  private readonly updatedAt: Date;
   private password: string;
 
   constructor(props: UserProps) {
@@ -35,7 +40,8 @@ export class User extends BaseUser {
     this.email = props.email;
     this.avatar = props.avatar;
     this.avatarUrl = props.avatarUrl;
-    this.validate();
+    this.createdAt = props.createdAt;
+    this.updatedAt = props.updatedAt;
   }
 
   protected validate(): AppError | undefined {
@@ -44,11 +50,17 @@ export class User extends BaseUser {
     }
   }
 
-  toDto(): Omit<UserDTO, "email" | "createdAt" | "updatedAt"> {
+  toDto(): Omit<UserProps, "email" | "createdAt" | "updatedAt"> {
     return {
       id: this.id,
       name: this.name,
       password: this.password,
+      avatar: this.avatar,
+      avatarUrl: this.avatarUrl,
     };
+  }
+
+  getAvatarUrl(): string {
+    return this.avatar;
   }
 }

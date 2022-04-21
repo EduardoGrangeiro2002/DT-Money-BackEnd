@@ -3,17 +3,22 @@ import { UserModel } from "modules/users/dataLayers/models";
 import { UserDTO, UserProps } from "modules/users/domain/entities/User";
 import { getRepository, Repository } from "typeorm";
 
-import { User } from "../entities/User";
+import { User } from "../../../domain/entities/index";
+import { User as UserTypeorm } from "../entities/User";
 
 export class UserRepository implements IUserRepository {
-  private readonly usersRepository: Repository<User>;
+  private readonly usersRepository: Repository<UserTypeorm>;
 
   constructor() {
-    this.usersRepository = getRepository(User);
+    this.usersRepository = getRepository(UserTypeorm);
   }
   save: (data: UserProps) => Promise<void>;
 
-  async createUsers({ email, name, password }: UserModel.Input): Promise<User> {
+  async createUsers({
+    email,
+    name,
+    password,
+  }: UserModel.Input): Promise<UserTypeorm> {
     const user = this.usersRepository.create({ email, name, password });
 
     await this.usersRepository.save(user);
@@ -25,9 +30,14 @@ export class UserRepository implements IUserRepository {
 
     return user;
   }
-  async findUserById(id: string): Promise<UserDTO> {
-    const user = await this.usersRepository.findOne(id);
+  async findUserById(id: string): Promise<User> {
+    const userData = await this.usersRepository.findOne(id);
+    let user: User | undefined;
 
+    if (userData) {
+      console.log(userData);
+      user = new User(userData as unknown as UserProps);
+    }
     return user;
   }
 }

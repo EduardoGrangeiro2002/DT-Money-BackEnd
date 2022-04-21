@@ -1,9 +1,9 @@
-import { UserDTO, UserProps } from "modules/users/domain/entities/User";
+import { UserProps } from "modules/users/domain/entities/User";
 
 export namespace UserModel {
   export type Input = UserProps;
 
-  export type Output = UserDTO;
+  export type Output = UserProps;
 
   export type OutputProfile = {
     id: string;
