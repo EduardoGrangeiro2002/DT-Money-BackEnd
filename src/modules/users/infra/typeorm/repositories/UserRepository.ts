@@ -1,6 +1,6 @@
 import { IUserRepository } from "modules/users/dataLayers/interfaces/IUserRepository";
 import { UserModel } from "modules/users/dataLayers/models";
-import { UserDTO } from "modules/users/domain/entities/User";
+import { UserDTO, UserProps } from "modules/users/domain/entities/User";
 import { getRepository, Repository } from "typeorm";
 
 import { User } from "../entities/User";
@@ -11,6 +11,7 @@ export class UserRepository implements IUserRepository {
   constructor() {
     this.usersRepository = getRepository(User);
   }
+  save: (data: UserProps) => Promise<void>;
 
   async createUsers({ email, name, password }: UserModel.Input): Promise<User> {
     const user = this.usersRepository.create({ email, name, password });

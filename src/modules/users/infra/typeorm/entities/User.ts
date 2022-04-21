@@ -13,6 +13,9 @@ export class User {
   email: string;
 
   @Column()
+  vip: string;
+
+  @Column()
   password: string;
 
   @Column()
@@ -27,6 +30,7 @@ export class User {
   constructor() {
     if (!this.id) {
       this.id = uuidV4();
+      this.vip = "null";
     }
   }
 }
