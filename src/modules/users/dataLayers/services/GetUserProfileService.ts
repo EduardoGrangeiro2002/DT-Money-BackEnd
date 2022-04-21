@@ -6,7 +6,7 @@ import { IUserRepository } from "../interfaces/IUserRepository";
 
 export class GetUserProfileService implements IGetUserProfile {
   constructor(private readonly userRepository: IUserRepository) {}
-  async execute(id: string): Promise<UserDTO> {
+  async getProfile(id: string): Promise<UserDTO> {
     const userProfile = await this.userRepository.findUserById(id);
 
     if (!userProfile) throw new AppError("User does not exists!");

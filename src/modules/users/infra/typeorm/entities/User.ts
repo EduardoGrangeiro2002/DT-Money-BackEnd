@@ -16,9 +16,6 @@ export class User {
   password: string;
 
   @Column()
-  vip: string;
-
-  @Column()
   avatar: string;
 
   @CreateDateColumn({ name: "created_at" })
@@ -30,7 +27,6 @@ export class User {
   constructor() {
     if (!this.id) {
       this.id = uuidV4();
-      this.vip = "bronze";
     }
   }
 }

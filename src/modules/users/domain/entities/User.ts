@@ -9,7 +9,6 @@ export type UserProps = {
   password: string;
   avatar?: string;
   avatarUrl?: string;
-  vip?: Vip;
 };
 
 export type UserDTO = {
@@ -17,12 +16,9 @@ export type UserDTO = {
   name: string;
   email: string;
   password: string;
-  vip: Vip;
   createdAt: Date;
   updatedAt: Date;
 };
-
-export type Vip = "bronze" | "gold" | "platinum" | "diamond";
 
 export class User extends BaseUser {
   private readonly email: string;
@@ -30,7 +26,6 @@ export class User extends BaseUser {
   private readonly id: string;
   private readonly avatar?: string;
   private readonly avatarUrl?: string;
-  private vip: Vip;
   private password: string;
 
   constructor(props: UserProps) {
@@ -40,7 +35,6 @@ export class User extends BaseUser {
     this.email = props.email;
     this.avatar = props.avatar;
     this.avatarUrl = props.avatarUrl;
-    this.vip = props.vip;
     this.validate();
   }
 
@@ -55,7 +49,6 @@ export class User extends BaseUser {
       id: this.id,
       name: this.name,
       password: this.password,
-      vip: this.vip,
     };
   }
 }

@@ -1,6 +1,5 @@
-import { ICreateUser } from "../../domain/features";
-import { Http, statusError, statusSuccess } from "../contracts/http";
-import { IController } from "../contracts/IController";
+import { ICreateUser } from "../../../domain/features";
+import { Http, statusError, statusSuccess, IController } from "../../contracts";
 
 export class CreateUserController implements IController {
   constructor(private readonly createUserService: ICreateUser) {}

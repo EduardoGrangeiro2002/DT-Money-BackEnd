@@ -7,7 +7,6 @@ export namespace UserModel {
 
   export type OutputProfile = {
     id: string;
-    vip: string;
     name: string;
     avatar: string;
     avatarUrl: string;
