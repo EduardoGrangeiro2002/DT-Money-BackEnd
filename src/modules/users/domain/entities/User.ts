@@ -6,7 +6,8 @@ export type UserProps = {
   id?: string;
   name: string;
   email: string;
-  vip?: string;
+  admin: boolean;
+  vipId?: string;
   password: string;
   avatar?: string;
   avatarUrl?: string;
@@ -31,12 +32,14 @@ export class User extends BaseUser {
   private readonly avatarUrl?: string;
   private readonly createdAt: Date;
   private readonly updatedAt: Date;
+  private readonly admin: boolean;
   private password: string;
 
   constructor(props: UserProps) {
     super();
     this.id = props.id;
     this.name = props.name;
+    this.admin = props.admin;
     this.email = props.email;
     this.password = props.password;
     this.avatar = props.avatar;
@@ -55,6 +58,7 @@ export class User extends BaseUser {
     return {
       id: this.id,
       name: this.name,
+      admin: this.admin,
       password: this.password,
       avatar: this.avatar,
       avatarUrl: this.avatarUrl,

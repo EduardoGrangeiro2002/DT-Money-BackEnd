@@ -12,8 +12,11 @@ export class User {
   @Column()
   email: string;
 
+  @Column({ name: "vip_id" })
+  vipId: string;
+
   @Column()
-  vip: string;
+  admin: boolean;
 
   @Column()
   password: string;
@@ -30,7 +33,6 @@ export class User {
   constructor() {
     if (!this.id) {
       this.id = uuidV4();
-      this.vip = "null";
     }
   }
 }

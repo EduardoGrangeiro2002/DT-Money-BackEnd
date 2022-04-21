@@ -1,7 +1,8 @@
 import "reflect-metadata";
-import { TypeormConnect } from "../typeorm/migrations/TypeormConnection";
+import "dotenv/config";
+import { TypeormHelper } from "../typeorm";
 
-TypeormConnect.connect()
+TypeormHelper.connect()
   .then(async () => {
     const { app } = await import("./config/app");
     const port = process.env.PORT ?? 3333;

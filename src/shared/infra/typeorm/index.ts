@@ -15,7 +15,7 @@ export type ConnectDTO = {
 };
 
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
-export class TypeormConnect {
+export class TypeormHelper {
   static connection?: Connection;
 
   private static connectionName: string;
@@ -26,7 +26,6 @@ export class TypeormConnect {
       this.connection?.name !== this.connectionName
     ) {
       const options = await this.getOptions();
-
       // remove migrations to prvent error on test
       // ReferenceError: You are trying to `import` a file after the Jest environment has been torn down.
       this.connection = await createConnection(options);

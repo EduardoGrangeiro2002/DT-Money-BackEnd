@@ -24,8 +24,9 @@ export class UsersTable1650059586566 implements MigrationInterface {
             type: "varchar",
           },
           {
-            name: "vip",
-            type: "varchar",
+            name: "admin",
+            type: "boolean",
+            default: false,
           },
           {
             name: "avatar",
