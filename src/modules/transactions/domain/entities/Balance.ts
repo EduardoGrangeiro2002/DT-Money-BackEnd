@@ -1,6 +1,6 @@
 export type Balance = {
   id: string;
-  user_id: string;
+  userId: string;
   balance: number;
   createdAt: Date;
   updatedAt: Date;

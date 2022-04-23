@@ -1,1 +1,1 @@
-export * from "./MakeCreateVipController";
+export * from "./CreateVipControllerFactories";
