@@ -14,12 +14,14 @@ export class TransactionRepository implements ITransactionRepository {
     name,
     type,
     value,
+    userId,
   }: Transaction.Input): Promise<Transaction.Output> {
     const transaction = this.transactionRepository.create({
       name,
       description,
       value,
       type,
+      userId,
     });
 
     await this.transactionRepository.save(transaction);

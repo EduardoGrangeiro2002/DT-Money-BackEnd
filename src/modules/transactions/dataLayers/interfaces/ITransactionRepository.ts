@@ -6,5 +6,6 @@ export interface ITransactionRepository {
     name,
     type,
     value,
+    userId,
   }: TransactionCreate.Input): Promise<TransactionCreate.Output>;
 }

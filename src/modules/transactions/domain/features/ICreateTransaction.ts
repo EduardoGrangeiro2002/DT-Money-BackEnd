@@ -3,6 +3,7 @@ import { TransactionProps, Type } from "../entities/Transaction";
 export interface ICreateTransaction {
   createTransaction({
     name,
+    userId,
     value,
     type,
     description,
@@ -11,6 +12,7 @@ export interface ICreateTransaction {
 
 export namespace Transaction {
   export type Input = {
+    userId: string;
     name: string;
     value: number;
     type: Type;

@@ -11,6 +11,7 @@ export class CreateTransactionService implements ICreateTransaction {
     value,
     type,
     description,
+    userId,
   }: TransactionCreate.Input): Promise<TransactionCreate.Output> {
     if (type !== "deposit" && type !== "withdraw") {
       throw new AppError("Tipo de transação não existente");
@@ -23,6 +24,7 @@ export class CreateTransactionService implements ICreateTransaction {
       name,
       type,
       value,
+      userId,
     });
 
     return transaction;

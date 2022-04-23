@@ -15,6 +15,9 @@ export class TransactionORM {
   @Column()
   value: number;
 
+  @Column({ name: "user_id" })
+  userId: string;
+
   @Column()
   type: string;
 
