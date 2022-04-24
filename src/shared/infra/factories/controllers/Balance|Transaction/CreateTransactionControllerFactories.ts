@@ -1,10 +1,12 @@
-import { CreateTransactionService } from "modules/transactions/dataLayers/services/CreateTransactionServices";
-import { UpdateBalanceService } from "modules/transactions/dataLayers/services/UpdateBalanceService";
-import { IController } from "modules/transactions/presentation/contracts";
-import { CreateTransactionController } from "modules/transactions/presentation/controllers";
+import { CreateTransactionService } from "modules/economic/dataLayers/services/CreateTransactionServices";
+import { UpdateBalanceService } from "modules/economic/dataLayers/services/UpdateBalanceService";
+import { IController } from "modules/economic/presentation/contracts";
+import { CreateTransactionController } from "modules/economic/presentation/controllers";
 
-import { MakeBalanceRepository } from "../../repositories";
-import { MakeTransactionRepository } from "../../repositories/makeRepositoryTransaction";
+import {
+  MakeBalanceRepository,
+  MakeTransactionRepository,
+} from "../../repositories";
 
 export const MakeCreateTransactionController = (): IController => {
   const repoBalance = MakeBalanceRepository.getInstance();

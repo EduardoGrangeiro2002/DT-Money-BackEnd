@@ -10,17 +10,19 @@ export class CreateUserService implements ICreateUser {
     private readonly userRepository: IUserRepository,
     private readonly hashData: IHashData
   ) {}
-  async create({ email, name, password }: UserProps): Promise<void> {
+  async create({ email, name, password }: UserProps): Promise<UserProps> {
     const user = await this.userRepository.findUserByEmail(email);
 
     if (user) throw new AppError("Email aleady exists");
 
     const passwordHash = await this.hashData.hashData(password);
 
-    await this.userRepository.createUsers({
+    const userReturn = await this.userRepository.createUsers({
       email,
       name,
       password: passwordHash,
     });
+
+    return userReturn;
   }
 }

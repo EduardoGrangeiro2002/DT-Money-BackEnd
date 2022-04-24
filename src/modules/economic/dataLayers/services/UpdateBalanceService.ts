@@ -1,5 +1,5 @@
-import { TransactionProps } from "modules/transactions/domain/entities/Transaction";
-import { IUpdateBalance } from "modules/transactions/domain/features";
+import { TransactionProps } from "modules/economic/domain/entities/Transaction";
+import { IUpdateBalance } from "modules/economic/domain/features";
 import AppError from "shared/errors/AppError";
 
 import { IBalanceRepository } from "../interfaces/IBalanceRepository";

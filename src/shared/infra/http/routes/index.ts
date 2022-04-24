@@ -6,6 +6,6 @@ import { VipRoutes } from "./Vip.routes";
 
 export const routes = Router();
 
+routes.use("/economic", transactionBalance);
 routes.use("/users", userRoutes);
 routes.use("/vips", VipRoutes);
-routes.use("/balance", transactionBalance);

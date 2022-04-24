@@ -1,4 +1,4 @@
-import { ICreateTransaction } from "modules/transactions/domain/features/ICreateTransaction";
+import { ICreateTransaction } from "modules/economic/domain/features/ICreateTransaction";
 import AppError from "shared/errors/AppError";
 
 import { ITransactionRepository } from "../interfaces/ITransactionRepository";

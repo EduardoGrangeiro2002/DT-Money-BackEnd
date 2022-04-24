@@ -1,5 +1,5 @@
-import { ITransactionRepository } from "modules/transactions/dataLayers/interfaces/ITransactionRepository";
-import { Transaction } from "modules/transactions/domain/features/ICreateTransaction";
+import { ITransactionRepository } from "modules/economic/dataLayers/interfaces/ITransactionRepository";
+import { Transaction } from "modules/economic/domain/features/ICreateTransaction";
 import { getRepository, Repository } from "typeorm";
 
 import { TransactionORM } from "../entities/Transaction";

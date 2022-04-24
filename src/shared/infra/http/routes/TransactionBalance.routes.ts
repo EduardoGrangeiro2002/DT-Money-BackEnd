@@ -3,8 +3,7 @@ import { MakeCreateTransactionController } from "shared/infra/factories/controll
 
 import { adaptRoute } from "../adapterRoutes";
 
-export const transactionBalance = Router();
-
 const createTransactionController = MakeCreateTransactionController();
+export const transactionBalance = Router();
 
 transactionBalance.post("/create", adaptRoute(createTransactionController));

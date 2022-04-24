@@ -1,5 +1,7 @@
+import { UserProps } from "../entities";
+
 export interface ICreateUser {
-  create: ({ email, name, password }: CreateUser.Input) => Promise<void>;
+  create: ({ email, name, password }: CreateUser.Input) => Promise<UserProps>;
 }
 
 export namespace CreateUser {

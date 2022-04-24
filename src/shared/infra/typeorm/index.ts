@@ -1,3 +1,5 @@
+import { BalanceORM } from "modules/economic/infra/typeorm/entities";
+import { TransactionORM } from "modules/economic/infra/typeorm/entities/Transaction";
 import { User } from "modules/users/infra/typeorm/entities/User";
 import { Vip } from "modules/vips/infra/typeorm/entities/Vip";
 import {
@@ -38,7 +40,7 @@ export class TypeormHelper {
     const options = await getConnectionOptions();
 
     return Object.assign(options, props, {
-      entities: [User, Vip],
+      entities: [User, Vip, BalanceORM, TransactionORM],
     });
   }
 

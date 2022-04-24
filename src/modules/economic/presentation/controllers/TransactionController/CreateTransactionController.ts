@@ -1,6 +1,6 @@
-import { BalanceModels } from "modules/transactions/dataLayers/models/BalanceModels";
-import { IUpdateBalance } from "modules/transactions/domain/features";
-import { ICreateTransaction } from "modules/transactions/domain/features/ICreateTransaction";
+import { BalanceModels } from "modules/economic/dataLayers/models/BalanceModels";
+import { IUpdateBalance } from "modules/economic/domain/features";
+import { ICreateTransaction } from "modules/economic/domain/features/ICreateTransaction";
 import { Http, IController } from "modules/users/presentation/contracts";
 
 import { statusError, statusSuccess } from "../../contracts";

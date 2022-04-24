@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { MakeCreateVipController } from "shared/infra/factories/controllers/Vip/MakeCreateVipController";
+import { MakeCreateVipController } from "shared/infra/factories/controllers";
 
 import { adaptRoute } from "../adapterRoutes";
 

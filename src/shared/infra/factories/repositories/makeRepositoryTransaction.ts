@@ -1,5 +1,5 @@
-import { ITransactionRepository } from "modules/transactions/dataLayers/interfaces/ITransactionRepository";
-import { TransactionRepository } from "modules/transactions/infra/typeorm/repositories/TransactionRepository";
+import { ITransactionRepository } from "modules/economic/dataLayers/interfaces/ITransactionRepository";
+import { TransactionRepository } from "modules/economic/infra/typeorm/repositories/TransactionRepository";
 
 export class MakeTransactionRepository {
   private static instance?: ITransactionRepository;

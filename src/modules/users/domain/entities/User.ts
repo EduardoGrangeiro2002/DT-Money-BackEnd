@@ -6,7 +6,7 @@ export type UserProps = {
   id?: string;
   name: string;
   email: string;
-  admin: boolean;
+  admin?: boolean;
   vipId?: string;
   password: string;
   avatar?: string;

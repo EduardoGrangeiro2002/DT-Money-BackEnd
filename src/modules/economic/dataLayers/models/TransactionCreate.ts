@@ -1,4 +1,4 @@
-import { Transaction } from "modules/transactions/domain/features/ICreateTransaction";
+import { Transaction } from "modules/economic/domain/features/ICreateTransaction";
 
 export namespace TransactionCreate {
   export type Input = Transaction.Input;
