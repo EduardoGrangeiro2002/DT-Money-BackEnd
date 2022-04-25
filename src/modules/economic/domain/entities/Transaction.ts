@@ -1,6 +1,6 @@
 export type TransactionProps = {
   id: string;
-  userId: string;
+  balanceId: string;
   name: string;
   description: string;
   type: string;
@@ -14,7 +14,7 @@ export type Type = "deposit" | "withdraw";
 export class Transaction {
   private readonly id: string;
   private readonly name: string;
-  private readonly userId: string;
+  private readonly balanceId: string;
   private readonly description: string;
   private readonly type: string;
   private readonly value: number;
@@ -24,7 +24,7 @@ export class Transaction {
   constructor(props: TransactionProps) {
     this.id = props.id;
     this.name = props.name;
-    this.userId = props.userId;
+    this.balanceId = props.balanceId;
     this.description = props.description;
     this.type = props.type;
     this.value = props.value;
@@ -43,7 +43,7 @@ export class Transaction {
       name: this.name,
       type: this.type,
       value: this.value,
-      userId: this.userId,
+      balanceId: this.balanceId,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt,
     };

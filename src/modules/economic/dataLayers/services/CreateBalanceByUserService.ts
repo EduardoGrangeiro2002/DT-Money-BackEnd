@@ -8,7 +8,7 @@ export class CreateBalanceByUserService implements ICreateBalanceByUser {
   constructor(private readonly balanceRepository: IBalanceRepository) {}
 
   async createBalanceByUser(userId: string): Promise<Balance> {
-    const balanceUser = await this.balanceRepository.findByUserId(userId);
+    const balanceUser = await this.balanceRepository.findById(userId);
 
     if (balanceUser) throw new AppError("Balance already exists");
 

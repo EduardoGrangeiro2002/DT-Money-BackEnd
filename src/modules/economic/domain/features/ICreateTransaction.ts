@@ -3,16 +3,16 @@ import { TransactionProps, Type } from "../entities/Transaction";
 export interface ICreateTransaction {
   createTransaction({
     name,
-    userId,
+    balanceId,
     value,
     type,
     description,
-  }: Transaction.Input): Promise<Transaction.Output>;
+  }: TransactionNM.Input): Promise<TransactionNM.Output>;
 }
 
-export namespace Transaction {
+export namespace TransactionNM {
   export type Input = {
-    userId: string;
+    balanceId: string;
     name: string;
     value: number;
     type: Type;

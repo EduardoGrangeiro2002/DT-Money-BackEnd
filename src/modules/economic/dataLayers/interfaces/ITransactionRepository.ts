@@ -1,3 +1,5 @@
+import { Transaction } from "modules/economic/domain/entities";
+
 import { TransactionCreate } from "../models/TransactionCreate";
 
 export interface ITransactionRepository {
@@ -6,6 +8,8 @@ export interface ITransactionRepository {
     name,
     type,
     value,
-    userId,
+    balanceId,
   }: TransactionCreate.Input): Promise<TransactionCreate.Output>;
+
+  findTransactionsByBalanceId: (id: string) => Promise<Transaction[]>;
 }

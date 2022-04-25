@@ -12,14 +12,14 @@ export class CreateTransactionController implements IController {
   ) {}
   async handle(request?: Http.Request): Promise<Http.Response<BalanceModels>> {
     try {
-      const { name, description, value, type, userId } = request.body;
+      const { name, description, value, type, balanceId } = request.body;
       const transaction = await this.createTransactionService.createTransaction(
         {
           description,
           name,
           type,
           value,
-          userId,
+          balanceId,
         }
       );
 

@@ -21,8 +21,8 @@ export class BalanceRepository implements IBalanceRepository {
 
     return BalanceAccount;
   }
-  async findByUserId(userId: string): Promise<Balance> {
-    const balance = await this.balancerepository.findOne({ userId });
+  async findById(id: string): Promise<Balance> {
+    const balance = await this.balancerepository.findOne(id);
 
     return balance;
   }
