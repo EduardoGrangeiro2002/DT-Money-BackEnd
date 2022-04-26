@@ -7,4 +7,5 @@ export interface IBalanceRepository {
     userId,
     balance,
   }: BalanceModelsCreate): Promise<BalanceModels>;
+  findUserId(userId: string): Promise<BalanceModels>;
 }

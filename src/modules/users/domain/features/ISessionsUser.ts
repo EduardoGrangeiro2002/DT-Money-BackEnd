@@ -11,9 +11,8 @@ export namespace Sessions {
     token: string;
 
     user: {
-      id: string;
       name: string;
-      vip: string;
+      vipId: string;
       avatarUrl: string;
     };
   };

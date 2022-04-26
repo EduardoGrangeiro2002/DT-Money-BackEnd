@@ -25,17 +25,17 @@ export class SessionsUserService implements ISessionsUser {
     );
     if (!checkPassword) throw new AppError("Senha ou usuário incorretos");
 
-    const { id, name, vip } = user.toDto();
+    const { id, name, vipId } = user.toDto();
     const avatarUrl = user.getAvatarUrl();
 
     const token = sign({}, authConfig.jwt.secrect, {
-      subject: JSON.stringify({ id, name, avatarUrl, vip }),
+      subject: id,
       expiresIn: authConfig.jwt.expiresIn,
     });
 
     return {
       token,
-      user: { id, name, vip, avatarUrl },
+      user: { name, vipId, avatarUrl },
     };
   }
 }

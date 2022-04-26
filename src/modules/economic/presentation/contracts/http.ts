@@ -15,7 +15,6 @@ export namespace Http {
 }
 
 export const statusError = (error: AppError): Http.Response => {
-  console.log(error);
   return {
     statusCode: error.statusCode,
     data: error.message,

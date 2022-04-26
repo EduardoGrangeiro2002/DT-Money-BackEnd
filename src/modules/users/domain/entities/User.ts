@@ -33,6 +33,7 @@ export class User extends BaseUser {
   private readonly createdAt: Date;
   private readonly updatedAt: Date;
   private readonly admin: boolean;
+  private readonly vipId: string;
   private password: string;
 
   constructor(props: UserProps) {
@@ -62,6 +63,7 @@ export class User extends BaseUser {
       password: this.password,
       avatar: this.avatar,
       avatarUrl: this.avatarUrl,
+      vipId: this.vipId,
     };
   }
 

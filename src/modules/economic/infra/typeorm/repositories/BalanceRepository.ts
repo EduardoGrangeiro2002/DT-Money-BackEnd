@@ -11,6 +11,11 @@ export class BalanceRepository implements IBalanceRepository {
   constructor() {
     this.balancerepository = getRepository(BalanceORM);
   }
+  async findUserId(userId: string): Promise<Balance> {
+    const balance = await this.balancerepository.findOne({ where: { userId } });
+
+    return balance;
+  }
   async createBalance({
     userId,
     balance,
